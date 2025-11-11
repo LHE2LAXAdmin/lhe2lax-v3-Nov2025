@@ -1,0 +1,687 @@
+/* LHE2LAX Website - Minimal & Elegant Design */
+/* Version: 2.0 - Rebrand 2025 */
+/* Color Scheme: Charcoal + Soft Gold + Clean White */
+
+/* --------------------------------------------------- */
+/* 1. COLOR PALETTE */
+/* --------------------------------------------------- */
+:root {
+    --primary-charcoal: #2D3436;
+    --secondary-slate: #636E72;
+    --accent-gold: #FDCB6E;
+    --accent-mint: #00B894;
+    --light-bg: #FAFBFC;
+    --pure-white: #FFFFFF;
+    --text-primary: #2D3436;
+    --text-light: #636E72;
+}
+
+/* --------------------------------------------------- */
+/* 2. GLOBAL STYLES */
+/* --------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-primary);
+    line-height: 1.8;
+    background: var(--pure-white);
+}
+
+/* --------------------------------------------------- */
+/* 3. NAVIGATION */
+/* --------------------------------------------------- */
+.navbar-minimal {
+    background: var(--pure-white);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--primary-charcoal) !important;
+    letter-spacing: 2px;
+}
+
+.nav-link-minimal {
+    color: var(--text-light) !important;
+    font-weight: 400;
+    font-size: 0.95rem;
+    margin: 0 1.5rem;
+    padding: 0;
+    border: none;
+    background: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link-minimal::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent-gold);
+    transition: width 0.3s ease;
+}
+
+.nav-link-minimal:hover,
+.nav-link-minimal.active {
+    color: var(--primary-charcoal) !important;
+}
+
+.nav-link-minimal:hover::after,
+.nav-link-minimal.active::after {
+    width: 100%;
+}
+
+/* --------------------------------------------------- */
+/* 4. BANNER IMAGE SECTION */
+/* --------------------------------------------------- */
+.banner-image {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+
+.banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(45, 52, 54, 0.85) 0%, rgba(99, 110, 114, 0.75) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-content {
+    text-align: left;
+    color: white;
+    max-width: 800px;
+}
+
+.banner-content h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.3;
+    color: white;
+    margin-bottom: 2rem;
+    letter-spacing: -1px;
+}
+
+.banner-content h1 strong {
+    font-weight: 600;
+}
+
+.banner-content .lead {
+    font-size: 1.3rem;
+    color: rgba(255,255,255,0.95);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+}
+
+.banner-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Responsive Banner */
+@media (max-width: 768px) {
+    .banner-image {
+        height: 500px;
+    }
+    
+    .banner-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .banner-content .lead {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner-image {
+        height: 450px;
+    }
+    
+    .banner-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .banner-cta {
+        flex-direction: column;
+    }
+}
+
+/* --------------------------------------------------- */
+/* 5. BUTTONS */
+/* --------------------------------------------------- */
+.btn-minimal-primary {
+    background: var(--primary-charcoal);
+    color: white;
+    padding: 1rem 2.5rem;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-minimal-primary:hover {
+    background: var(--accent-gold);
+    color: var(--primary-charcoal);
+    transform: translateY(-2px);
+}
+
+.btn-minimal-secondary {
+    background: transparent;
+    color: white;
+    padding: 1rem 2.5rem;
+    border: 1px solid white;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-minimal-secondary:hover {
+    background: white;
+    color: var(--primary-charcoal);
+}
+
+/* --------------------------------------------------- */
+/* 6. SERVICE BOXES */
+/* --------------------------------------------------- */
+.service-grid {
+    padding: 6rem 0;
+    background: var(--light-bg);
+}
+
+/* Swiper Container Styling */
+.servicesSwiper {
+    padding: 2rem 0 4rem 0;
+}
+
+.swiper-slide {
+    height: auto;
+}
+
+.service-box-minimal {
+    background: var(--pure-white);
+    padding: 3rem;
+    height: 100%;
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+}
+
+.service-box-minimal:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.service-number {
+    font-size: 3rem;
+    font-weight: 200;
+    color: var(--accent-gold);
+    margin-bottom: 1.5rem;
+    line-height: 1;
+}
+
+.service-title-minimal {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--primary-charcoal);
+}
+
+.service-desc-minimal {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* Swiper Navigation Buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--accent-gold);
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: var(--primary-charcoal);
+}
+
+/* Swiper Pagination Dots */
+.swiper-pagination-bullet {
+    background: var(--text-light);
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--accent-gold);
+    opacity: 1;
+}
+
+/* --------------------------------------------------- */
+/* 7. SECTION HEADERS */
+/* --------------------------------------------------- */
+.section-header-minimal {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.section-header-minimal h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--primary-charcoal);
+    margin-bottom: 1rem;
+}
+
+.section-header-minimal .accent-line {
+    width: 60px;
+    height: 2px;
+    background: var(--accent-gold);
+    margin: 0 auto 1.5rem;
+}
+
+.section-header-minimal p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --------------------------------------------------- */
+/* 8. WHY CHOOSE SECTION */
+/* --------------------------------------------------- */
+.why-choose {
+    padding: 6rem 0;
+    background: var(--pure-white);
+}
+
+.feature-item {
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.feature-item:last-child {
+    border-bottom: none;
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--accent-mint);
+    margin-bottom: 1rem;
+}
+
+.feature-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--primary-charcoal);
+}
+
+.feature-text {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* --------------------------------------------------- */
+/* 9. CTA SECTION */
+/* --------------------------------------------------- */
+.cta-minimal {
+    padding: 8rem 0;
+    background: var(--primary-charcoal);
+    text-align: center;
+}
+
+.cta-minimal h2 {
+    font-size: 3rem;
+    font-weight: 300;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.cta-minimal p {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 3rem;
+}
+
+/* --------------------------------------------------- */
+/* 10. FOOTER */
+/* --------------------------------------------------- */
+.footer-minimal {
+    padding: 4rem 0 2rem;
+    background: var(--light-bg);
+}
+
+.footer-minimal .footer-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--primary-charcoal);
+    margin-bottom: 1rem;
+}
+
+.footer-minimal p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent-gold);
+}
+
+/* --------------------------------------------------- */
+/* 11. RESPONSIVE ADJUSTMENTS */
+/* --------------------------------------------------- */
+@media (max-width: 768px) {
+    .nav-link-minimal {
+        margin: 0.5rem 0;
+    }
+    
+    .section-header-minimal h2 {
+        font-size: 2rem;
+    }
+    
+    .cta-minimal h2 {
+        font-size: 2rem;
+    }
+}
+
+/* --------------------------------------------------- */
+/* 12. ABOUT PAGE CONTENT BLOCKS */
+/* --------------------------------------------------- */
+.content-block {
+    padding: 6rem 0;
+}
+
+.content-block.bg-light {
+    background: var(--light-bg);
+}
+
+.content-block.bg-white {
+    background: var(--pure-white);
+}
+
+.block-heading {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--primary-charcoal);
+    margin-bottom: 2rem;
+}
+
+.block-text {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* Approach Items (Block 2) */
+.approach-item {
+    margin-bottom: 2rem;
+}
+
+.approach-item:last-child {
+    margin-bottom: 0;
+}
+
+.approach-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--primary-charcoal);
+    margin-bottom: 0.75rem;
+}
+
+/* Value Items (Block 3) */
+.value-item {
+    margin-bottom: 2rem;
+}
+
+.value-item:last-child {
+    margin-bottom: 0;
+}
+
+.value-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--primary-charcoal);
+    margin-bottom: 0.75rem;
+}
+
+/* Founder Signature (Block 4) */
+.founder-signature {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+/* About page images */
+.content-block img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 991px) {
+    .content-block {
+        padding: 4rem 0;
+    }
+    
+    .block-heading {
+        font-size: 2rem;
+    }
+    
+    .content-block .order-lg-1,
+    .content-block .order-lg-2 {
+        order: 0 !important;
+    }
+}
+
+/* --------------------------------------------------- */
+/* 13. BLOG PAGE STYLING */
+/* --------------------------------------------------- */
+
+/* Quick Tips Section */
+.quick-tips-section {
+    padding: 6rem 0;
+    background: var(--light-bg);
+}
+
+.tip-card {
+    background: var(--pure-white);
+    padding: 2rem;
+    height: 100%;
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.tip-card:hover {
+    border-color: var(--accent-gold);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transform: translateY(-3px);
+}
+
+.tip-image {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.tip-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.tip-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--primary-charcoal);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.tip-text {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* Blog Articles Section */
+.blog-articles-section {
+    padding: 6rem 0;
+    background: var(--pure-white);
+}
+
+.blog-post-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Topic Section Styling */
+.topic-section {
+    margin-bottom: 4rem;
+}
+
+.topic-section:last-child {
+    margin-bottom: 0;
+}
+
+.topic-section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-charcoal);
+    margin-bottom: 2.5rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--light-bg);
+    border-left: 4px solid var(--accent-gold);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.topic-section-title i {
+    color: var(--accent-gold);
+    font-size: 2rem;
+}
+
+.blog-post-item {
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.blog-post-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.post-meta {
+    margin-bottom: 0.75rem;
+}
+
+.post-date {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-right: 1rem;
+}
+
+.post-tag {
+    display: inline-block;
+    background: var(--light-bg);
+    color: var(--text-light);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin-right: 0.5rem;
+    font-weight: 500;
+}
+
+.post-title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.post-title a {
+    color: var(--primary-charcoal);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.post-title a:hover {
+    color: var(--accent-gold);
+}
+
+.post-excerpt {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .quick-tips-section {
+        padding: 4rem 0;
+    }
+    
+    .blog-articles-section {
+        padding: 4rem 0;
+    }
+    
+    .topic-section-title {
+        font-size: 1.6rem;
+        padding: 1rem;
+    }
+    
+    .topic-section-title i {
+        font-size: 1.5rem;
+    }
+    
+    .post-title {
+        font-size: 1.2rem;
+    }
+}
